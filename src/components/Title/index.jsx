@@ -1,8 +1,9 @@
+import { Container } from '@mui/material';
 import './Title.css';
 
 export default function Title() {
   return (
-    <section className="title">
+    <Container component="section" className='title' maxWidth="lg">
       <div className="title__div">
         <img className="title__profile" src="./assets/profile.png" alt="Imagem de Perfil"/>
         <div className="title__container">
@@ -42,6 +43,6 @@ export default function Title() {
           </div>
         </div>
       </div>
-    </section>
+    </Container>
   )
 }

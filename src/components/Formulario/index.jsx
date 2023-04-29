@@ -10,6 +10,13 @@ export default function Formulario() {
   const [assunto, setAssunto] = useState('');
   const [mensagem, setMensagem] = useState('');
 
+  const erros = {
+    nome: {
+      valido: true,
+      texto: ""
+    }
+  }
+
   const atualizaNome = (evento) => {
     let tempNome = evento.target.value;
 
@@ -63,13 +70,13 @@ export default function Formulario() {
 
           <form onSubmit={enviarForm} id="my-form" action="https://formspree.io/f/xrgvozjb" method="POST">
 
-            <TextField variant='outlined' fullWidth label="Nome" margin="normal" className='input-label' />
+            <TextField variant='outlined' error={!erros.nome.valido} helperText={erros.nome.texto} fullWidth label="Nome" margin="normal" sx={{input: {background: "white"}}} />
 
-            <TextField variant='outlined' fullWidth label="Email" margin="normal" className='input-label' />
+            <TextField variant='outlined' fullWidth label="Email" margin="normal" className='input-label' sx={{input: {background: "white"}}} />
 
-            <TextField variant='outlined' fullWidth label="Assunto" margin="normal" className='input-label' />
+            <TextField variant='outlined' fullWidth label="Assunto" margin="normal" className='input-label' sx={{input: {background: "white"}}} />
 
-            <TextField variant='outlined' fullWidth multiline rows={4} label="Mensagem" inputProps={{ maxLength: 301 }} margin="normal" className='input-label' />
+            <TextField variant='outlined' fullWidth multiline rows={4} label="Mensagem" inputProps={{ maxLength: 301 }} margin="normal" className='input-label' sx={{input: {background: "white"}}} />
 
             <Typography align="center" mt={2}>
               <Button type="submit" variant="contained">Send Message</Button>

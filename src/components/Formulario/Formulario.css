@@ -206,12 +206,7 @@ section.formcontato {
 }
 
 /*Tablet*/
-@media (max-width: 768px) {
-   
-}
+@media (max-width: 768px) {}
 
 /*Mobile*/
-@media (max-width: 412px) {
-
-}
-
+@media (max-width: 412px) {}
