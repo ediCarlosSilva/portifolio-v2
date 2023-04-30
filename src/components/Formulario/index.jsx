@@ -9,22 +9,19 @@ export default function Formulario() {
   const [email, setEmail] = useState('');
   const [assunto, setAssunto] = useState('');
   const [mensagem, setMensagem] = useState('');
-
-  const erros = {
-    nome: {
-      valido: true,
-      texto: ""
-    }
-  }
+  const [erroNome, setErroNome] = useState({nome: {valido: true, texto: ""}});
+  const [erroAssunto, setErroAssunto] = useState({assunto: {valido: true, texto: ""}});
+  const [erroMensagem, setErroMensagem] = useState({mensagem: {valido: true, texto: ""}});
 
   const atualizaNome = (evento) => {
     let tempNome = evento.target.value;
 
-    if (tempNome > 50) {
-
+    if (tempNome.length > 50) {
+      setErroNome({ nome: {valido: false, texto: "Sorry, only 50 letters."}})
+    } else {
+      setNome(tempNome);
+      setErroNome({nome: {valido: true, texto: ""}})
     }
-
-    setNome(tempNome);
   }
 
   function atualizaEmail(evento) {
@@ -32,11 +29,25 @@ export default function Formulario() {
   }
 
   function atualizaAssunto(evento) {
-    setAssunto(evento.target.value)
+    let tempAssunto = evento.target.value;
+
+    if (tempAssunto.length > 50) {
+      setErroAssunto({ assunto: {valido: false, texto: "Sorry, only 50 letters."}})
+    } else {
+      setAssunto(tempAssunto);
+      setErroAssunto({assunto: {valido: true, texto: ""}})
+    }
   }
 
   function atualizaMensagem(evento) {
-    setMensagem(evento.target.value);
+    let tempMensagem = evento.target.value;
+
+    if (tempMensagem.length > 300) {
+      setErroMensagem({mensagem: {valido: false, texto: "Sorry, only 300 letters."}})
+    } else {
+      setMensagem(tempMensagem);
+      setErroMensagem({mensagem: {valido: true, texto: ""}})
+    }
   }
 
   function enviarForm(evento) {
@@ -70,13 +81,56 @@ export default function Formulario() {
 
           <form onSubmit={enviarForm} id="my-form" action="https://formspree.io/f/xrgvozjb" method="POST">
 
-            <TextField variant='outlined' error={!erros.nome.valido} helperText={erros.nome.texto} fullWidth label="Nome" margin="normal" sx={{input: {background: "white"}}} />
+            <TextField 
+              value={nome} 
+              onChange={atualizaNome} 
+              name="nome" 
+              variant='outlined' 
+              error={!erroNome.nome.valido} 
+              helperText={erroNome.nome.texto} 
+              fullWidth 
+              label="Nome" 
+              margin="normal" 
+              sx={{input: {background: "white"}}} 
+            />
 
-            <TextField variant='outlined' fullWidth label="Email" margin="normal" className='input-label' sx={{input: {background: "white"}}} />
+            <TextField 
+              variant='outlined' 
+              fullWidth 
+              label="Email" 
+              margin="normal" 
+              className='input-label' 
+              sx={{input: {background: "white"}}} 
+            />
 
-            <TextField variant='outlined' fullWidth label="Assunto" margin="normal" className='input-label' sx={{input: {background: "white"}}} />
+            <TextField 
+              value={assunto}
+              onChange={atualizaAssunto}
+              error={!erroAssunto.assunto.valido}
+              helperText={erroAssunto.assunto.texto}
+              name={assunto}
+              variant='outlined' 
+              fullWidth 
+              label="Assunto" 
+              margin="normal" 
+              sx={{input: {background: "white"}}} 
+            />
 
-            <TextField variant='outlined' fullWidth multiline rows={4} label="Mensagem" inputProps={{ maxLength: 301 }} margin="normal" className='input-label' sx={{input: {background: "white"}}} />
+            <TextField 
+              value={mensagem}
+              onChange={atualizaMensagem}
+              error={!erroMensagem.mensagem.valido}
+              helperText={erroMensagem.mensagem.texto}
+              name={mensagem}
+              variant='outlined' 
+              fullWidth 
+              multiline 
+              rows={4} 
+              label="Mensagem" 
+              inputProps={{ maxLength: 301 }} 
+              margin="normal" 
+              sx={{input: {background: "white"}}} 
+            />
 
             <Typography align="center" mt={2}>
               <Button type="submit" variant="contained">Send Message</Button>
