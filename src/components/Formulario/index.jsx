@@ -3,6 +3,7 @@ import './Formulario.css';
 import { Button, Container, TextField, Typography } from '@mui/material';
 import Grid2 from '@mui/material/Unstable_Grid2'; // Grid version 2
 import validator from 'validator';
+import { useForm, ValidationError } from '@formspree/react';
 
 export default function Formulario() {
 
@@ -14,6 +15,8 @@ export default function Formulario() {
   const [erroEmail, setErroEmail] = useState({email: {valido: true, texto: ""}});
   const [erroAssunto, setErroAssunto] = useState({assunto: {valido: true, texto: ""}});
   const [erroMensagem, setErroMensagem] = useState({mensagem: {valido: true, texto: ""}});
+
+  const [state, handleSubmit] = useForm("xrgvozjb");
 
   const atualizaNome = (evento) => {
     let tempNome = evento.target.value;
@@ -65,10 +68,14 @@ export default function Formulario() {
     }
   }
 
-  function enviarForm(evento) {
-    evento.preventDefault();
-    console.log(nome, email, assunto, mensagem);
-  }
+  // function enviarForm(evento) {
+  //   evento.preventDefault();
+  //   if (state.succeeded) {
+  //     return <p>Thanks for joining!</p>;
+  // }
+  //   if ()
+  //   console.log(nome, email, assunto, mensagem);
+  // }
 
   return (
     <Container component="section" maxWidth="lg" sx={{ mb: 3, mt: 3 }}>
@@ -94,7 +101,7 @@ export default function Formulario() {
         </Grid2>
         <Grid2 xs={12} sm={12} md={12} lg={7}>
 
-          <form onSubmit={enviarForm} id="my-form" action="https://formspree.io/f/xrgvozjb" method="POST">
+          <form onSubmit={handleSubmit} id="my-form">
 
             <TextField 
               value={nome} 
@@ -112,7 +119,7 @@ export default function Formulario() {
             <TextField 
               variant='outlined'
               value={email}
-              name={email}
+              name="E-mail"
               onChange={atualizaEmail}
               onBlur={validaEmail}
               error={!erroEmail.email.valido}
@@ -128,7 +135,7 @@ export default function Formulario() {
               onChange={atualizaAssunto}
               error={!erroAssunto.assunto.valido}
               helperText={erroAssunto.assunto.texto}
-              name={assunto}
+              name="Assunto"
               variant='outlined' 
               fullWidth 
               label="Assunto" 
@@ -141,7 +148,7 @@ export default function Formulario() {
               onChange={atualizaMensagem}
               error={!erroMensagem.mensagem.valido}
               helperText={erroMensagem.mensagem.texto}
-              name={mensagem}
+              name="mensagem"
               variant='outlined' 
               fullWidth 
               multiline 
@@ -153,7 +160,10 @@ export default function Formulario() {
             />
 
             <Typography align="center" mt={2}>
-              <Button type="submit" variant="contained">Send Message</Button>
+              <Button 
+                type="submit" 
+                variant="contained" 
+                disabled={state.submitting}>Send Message</Button>
             </Typography>
 
             {/* <div className="input-container">
