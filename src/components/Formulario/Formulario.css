@@ -210,3 +210,11 @@ section.formcontato {
 
 /*Mobile*/
 @media (max-width: 412px) {}
+
+/* .MuiTextField-root {
+    background: white;
+} */
+
+.MuiInputBase-root {
+    background: white;
+}

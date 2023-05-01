@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './Formulario.css';
 import { Button, Container, TextField, Typography } from '@mui/material';
 import Grid2 from '@mui/material/Unstable_Grid2'; // Grid version 2
+import validator from 'validator';
 
 export default function Formulario() {
 
@@ -10,6 +11,7 @@ export default function Formulario() {
   const [assunto, setAssunto] = useState('');
   const [mensagem, setMensagem] = useState('');
   const [erroNome, setErroNome] = useState({nome: {valido: true, texto: ""}});
+  const [erroEmail, setErroEmail] = useState({email: {valido: true, texto: ""}});
   const [erroAssunto, setErroAssunto] = useState({assunto: {valido: true, texto: ""}});
   const [erroMensagem, setErroMensagem] = useState({mensagem: {valido: true, texto: ""}});
 
@@ -26,6 +28,19 @@ export default function Formulario() {
 
   function atualizaEmail(evento) {
     setEmail(evento.target.value)
+  }
+
+  function validaEmail(evento) {
+    let tempEmail = evento.target.value;
+
+    if (validator.isEmail(tempEmail)) {
+      setErroEmail({email: {valido: true, texto: ""}})
+    } else if (validator.isEmpty(tempEmail)) {
+      setErroEmail({email: {valido: true, texto: ""}})
+    } else {
+      setErroEmail({email: {valido: false, texto: "Enter a valid e-mail, please"}})
+    }
+
   }
 
   function atualizaAssunto(evento) {
@@ -95,11 +110,16 @@ export default function Formulario() {
             />
 
             <TextField 
-              variant='outlined' 
+              variant='outlined'
+              value={email}
+              name={email}
+              onChange={atualizaEmail}
+              onBlur={validaEmail}
+              error={!erroEmail.email.valido}
+              helperText={erroEmail.email.texto}
               fullWidth 
               label="Email" 
               margin="normal" 
-              className='input-label' 
               sx={{input: {background: "white"}}} 
             />
 
@@ -128,8 +148,8 @@ export default function Formulario() {
               rows={4} 
               label="Mensagem" 
               inputProps={{ maxLength: 301 }} 
-              margin="normal" 
-              sx={{input: {background: "white"}}} 
+              margin="normal"
+              sx={{input: {background: "white"}, textarea: {background: "white"} }} 
             />
 
             <Typography align="center" mt={2}>
