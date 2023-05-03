@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "titulo": "Blog",
+        "texto": "In this project, React is used to consume a Rest API and display blog posts, as well as their comments."
+    },
+    {
+        "id": 2,
+        "titulo": "Decoder",
+        "texto": "A project that encrypts and decrypts text using javascript."
+    },
+    {
+        "id": 3,
+        "titulo": "Responsive website with flexbox",
+        "texto": "Responsive website design using css flexbox property."
+    }
+]

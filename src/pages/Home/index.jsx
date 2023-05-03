@@ -10,8 +10,6 @@ import Title from "../../components/Title"
 
 export default function Home() {
 
-    
-
     return (
         <>
             <Title />
@@ -20,7 +18,7 @@ export default function Home() {
             <Hobbies />
             <Academico />
             <Experiencia />
-            <Projetos />
+            {/* <Projetos /> */}
             <Formulario />
             <Footer />
         </>

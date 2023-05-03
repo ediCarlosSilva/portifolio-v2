@@ -1,43 +1,28 @@
 import './Projetos.css';
 import { Link } from 'react-router-dom';
+import ProjectCard from '../ProjectCard'
 
-export default function Projetos() {
-    return (
-      <section className="projetos">
+export default function Projetos({projetos}) {
+
+  // console.log(projetos);
+
+  return (
+    <section className="projetos">
       <div className="projetos__section--title">
-        <h2 className="projetos__section__title" id="projetos">Top 3 Projects</h2>
-        <img className="projetos__section--imagem" src="assets/direita-esquerda.png"
-          alt="Seta para direita e esquerda indicando mais projetos." />
-        <Link to="/projetos" className="projeto__section--mais">More Projects</Link>
+        <h2 className="projetos__section__title" id="projetos">Projects</h2>
       </div>
 
       <div className="projetos__content">
-        <div className="projeto" title="Saiba Mais">
-          <div className="projeto--imagem"><img src="assets/blog.png" alt="Projeto Decodificador." />
-          </div>
-          <div className="projeto--conteudo">
-            <h2 className="projeto--titulo">Blog</h2>
-            <p className="projeto--descricao">In this project, React is used to consume a Rest API and display blog posts, as well as their comments.</p>
-          </div>
- 
-          <div className="projeto__description">
-            <span className="projeto__repo">
-              <a href="https://github.com/ediCarlosSilva/blogWithRest">
-                <button className="projeto__botao--repo">Repository</button>
-              </a>
-            </span>
-            <span className="projeto__demo">
-              <a href="https://edicarlossilva.github.io/blogWithRest/">
-                <button className="projeto__botao--demo">Deploy</button>
-              </a>
-            </span>
-          </div>
 
+        {
+          projetos.map(projeto=> <ProjectCard key={projeto.id} projeto={projeto} />)
+        }
 
-        </div>
+        {/* <ProjectCard /> */}
 
-        <div className="projeto">
-          <div className="projeto--imagem"><img src="assets/decodificador.jpg" alt="Projeto Decodificador." />
+        {/* <div className="projeto">
+          <div className="projeto--imagem">
+            <img src="assets/decodificador.jpg" alt="Projeto Decodificador." />
           </div>
           <div className="projeto--conteudo">
             <h2 className="projeto--titulo">Decoder</h2>
@@ -47,9 +32,9 @@ export default function Projetos() {
           <div className="projeto__description">
 
             <span className="projeto__repo"><a href="https://github.com/ediCarlosSilva/challenge01-decodificador"><button
-                  className="projeto__botao--repo">Repository</button></a></span>
+              className="projeto__botao--repo">Repository</button></a></span>
             <span className="projeto__demo"><a href="https://edicarlossilva.github.io/challenge01-decodificador/"><button
-                  className="projeto__botao--demo">Deploy</button></a></span>
+              className="projeto__botao--demo">Deploy</button></a></span>
           </div>
 
         </div>
@@ -63,15 +48,16 @@ export default function Projetos() {
           </div>
 
           <div className="projeto__description">
-            
+
             <span className="projeto__repo"><a href="https://github.com/ediCarlosSilva/flexbox-2023"><button
-                  className="projeto__botao--repo">Repository</button></a></span>
+              className="projeto__botao--repo">Repository</button></a></span>
             <span className="projeto__demo"><a href="https://edicarlossilva.github.io/flexbox-2023/"><button
-                  className="projeto__botao--demo">Deploy</button></a></span>
+              className="projeto__botao--demo">Deploy</button></a></span>
           </div>
-        </div>
+        </div> */}
+
       </div>
 
     </section>
-    )
+  )
 }
