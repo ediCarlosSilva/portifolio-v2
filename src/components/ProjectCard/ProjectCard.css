@@ -2,9 +2,24 @@
     width: 30%;
 }
 
+.projeto--titulo {
+    margin: .5rem 0;
+}
+
 .projeto--descricao {
     text-align: justify;
     min-height: 48px;
+}
+
+.projeto--motivo {
+    display: flex;
+    justify-content: space-around;
+}
+
+.projeto--tipo,
+.projeto--origem {
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .projeto--imagem img {
@@ -79,7 +94,7 @@
     .projeto__description {
         margin-top: 1rem;
     }
-    
+
     .projeto--descricao {
         line-height: 1.3rem;
     }

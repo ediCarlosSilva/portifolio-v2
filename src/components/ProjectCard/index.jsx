@@ -11,17 +11,21 @@ export default function ProjectCard({projeto}) {
       </div>
       <div className="projeto--conteudo">
         <h2 className="projeto--titulo">{projeto.titulo}</h2>
+        <div className='projeto--motivo'>
+          <p className="projeto--tipo">Estudo</p>
+          <p className="projeto--origem">Alura</p>
+        </div>
         <p className="projeto--descricao">{projeto.texto}</p>
       </div>
 
       <div className="projeto__description">
         <span className="projeto__repo">
-          <a href="https://github.com/ediCarlosSilva/blogWithRest">
+          <a href={projeto.repositorio} target="_blank">
             <button className="projeto__botao--repo">Repository</button>
           </a>
         </span>
         <span className="projeto__demo">
-          <a href="https://edicarlossilva.github.io/blogWithRest/">
+          <a href={projeto.deploy} target="_blank">
             <button className="projeto__botao--demo">Deploy</button>
           </a>
         </span>

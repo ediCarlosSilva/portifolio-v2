@@ -12,13 +12,13 @@ export default function Menu() {
                 </header>
                 <nav>
                     <ul className="menu__list">
-                        <li className="menu__list__item"><a href="#sobremim">About me</a></li>
-                        <li className="menu__list__item"><a href="#skills">Skills</a></li>
-                        <li className="menu__list__item"><a href="#hobbies">Hobbies</a></li>
-                        <li className="menu__list__item"><a href="#formacao">Training and courses</a></li>
-                        <li className="menu__list__item"><a href="#experiencia">Experience</a></li>
+                        <li className="menu__list__item"><a href="/#sobremim">About me</a></li>
+                        <li className="menu__list__item"><a href="/#skills">Skills</a></li>
+                        <li className="menu__list__item"><a href="/#hobbies">Hobbies</a></li>
+                        <li className="menu__list__item"><a href="/#formacao">Training and courses</a></li>
+                        <li className="menu__list__item"><a href="/#experiencia">Experience</a></li>
                         <li className="menu__list__item"><Link to="/projetos">Projects</Link></li>
-                        <li className="menu__list__item__contato"><a href="#contato">edi_csilva@hotmail.com</a></li>
+                        <li className="menu__list__item__contato"><a href="/#contato">edi_csilva@hotmail.com</a></li>
                     </ul>
                 </nav>
             </section>
