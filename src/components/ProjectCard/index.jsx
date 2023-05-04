@@ -9,7 +9,7 @@ export default function ProjectCard({projeto}) {
   return (
     <div className="projeto" title="Saiba Mais">
       <div className="projeto--imagem">
-        <img src="assets/blog.png" alt="Projeto Blog." />
+        <img src={projeto.imagem} alt={`Imagem do projeto: ${projeto.titulo}`} />
       </div>
       <div className="projeto--conteudo">
         <h2 className="projeto--titulo">{projeto.titulo}</h2>

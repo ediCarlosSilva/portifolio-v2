@@ -3,7 +3,7 @@ import Projetos from '../../components/Projetos';
 import {v4 as uuidv4} from 'uuid';
 
 import projetos from '../../json/projetos.json';
-// import tiposProjetos from '../../json/tiposProjetos.json';
+import tiposProjetos from '../../json/tiposProjetos.json';
 
 export default function ProjetosPage() {
 
@@ -12,7 +12,7 @@ export default function ProjetosPage() {
 
     return (
         // <h1>Projetos</h1>
-        <Projetos projetos={projetos} />
+        <Projetos projetos={projetos} tiposProjetos={tiposProjetos}/>
     )
 
 }

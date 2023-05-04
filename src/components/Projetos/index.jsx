@@ -3,23 +3,20 @@ import { Link } from 'react-router-dom';
 import ProjectCard from '../ProjectCard'
 import ListaSuspensa from '../ListaSuspensa'
 
-export default function Projetos({projetos}) {
-
-  // console.log(projetos);
-  // console.log(tiposProjetos);
+export default function Projetos({ projetos, tiposProjetos }) {
 
   return (
     <section className="projetos">
       <div className="projetos__section--title">
-        <h2 className="projetos__section__title" id="projetos">Projects</h2>
+        {/* <h2 className="projetos__section__title" id="projetos">Projects</h2> */}
+        <ListaSuspensa label="Tipos Projetos" tiposProjetos={tiposProjetos} />
       </div>
 
-      {/* <ListaSuspensa /> */}
 
       <div className="projetos__content">
 
         {
-          projetos.map(projeto=> <ProjectCard key={projeto.id} projeto={projeto} />)
+          projetos.map(projeto => <ProjectCard key={projeto.id} projeto={projeto} />)
         }
 
         {/* <ProjectCard /> */}

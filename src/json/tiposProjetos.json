@@ -1,13 +1,11 @@
 [
     {
         "id": 1,
-        "tipo": "Estudo",
-        "origem": ["alura", "rocketseat"]
+        "tipo": "Estudo"
     },
     {
         "id": 2,
-        "tipo": "Challenge",
-        "origem": ["alura", "frontendmentor"]
+        "tipo": "Challenge"
     },
     {
         "id": 3,
