@@ -16,6 +16,21 @@
     justify-content: space-around;
 }
 
+
+table {
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+thead {
+    font-weight: bold;
+}
+
+tbody td {
+    padding: .5rem 0;
+}
+
 .projeto--tipo,
 .projeto--origem {
     font-weight: bold;

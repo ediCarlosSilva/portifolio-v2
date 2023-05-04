@@ -4,20 +4,26 @@
         "titulo": "Blog",
         "texto": "In this project, React is used to consume a Rest API and display blog posts, as well as their comments.",
         "repositorio": "https://github.com/ediCarlosSilva/blogWithRest",
-        "deploy": "https://edicarlossilva.github.io/blogWithRest/"
+        "deploy": "https://edicarlossilva.github.io/blogWithRest/",
+        "tipo": "Teste Técnico",
+        "origem": "Recrutador"
     },
     {
         "id": 2,
         "titulo": "Decoder",
         "texto": "A project that encrypts and decrypts text using javascript.",
         "repositorio": "https://github.com/ediCarlosSilva/challenge01-decodificador",
-        "deploy": "https://edicarlossilva.github.io/challenge01-decodificador/"
+        "deploy": "https://edicarlossilva.github.io/challenge01-decodificador/",
+        "tipo": "Challenge",
+        "origem": "Alura"
     },
     {
         "id": 3,
         "titulo": "Responsive website with flexbox",
         "texto": "Responsive website design using css flexbox property.",
         "repositorio": "https://github.com/ediCarlosSilva/flexbox-2023",
-        "deploy": "https://edicarlossilva.github.io/flexbox-2023/"
+        "deploy": "https://edicarlossilva.github.io/flexbox-2023/",
+        "tipo": "Estudo",
+        "origem": "Alura"
     }
 ]

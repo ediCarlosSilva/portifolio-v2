@@ -4,6 +4,8 @@ import React from 'react';
 
 export default function ProjectCard({projeto}) {
 
+  // console.log(projeto);
+
   return (
     <div className="projeto" title="Saiba Mais">
       <div className="projeto--imagem">
@@ -12,8 +14,22 @@ export default function ProjectCard({projeto}) {
       <div className="projeto--conteudo">
         <h2 className="projeto--titulo">{projeto.titulo}</h2>
         <div className='projeto--motivo'>
-          <p className="projeto--tipo">Estudo</p>
-          <p className="projeto--origem">Alura</p>
+          <table>
+            <thead>
+              <tr>
+                <td>Tipo</td>
+                <td>Origem</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{projeto.tipo}</td>
+                <td>{projeto.origem}</td>
+              </tr>
+            </tbody>
+          </table>
+          {/* <p className="projeto--tipo">{projeto.tipo}</p>
+          <p className="projeto--origem">{projeto.origem}</p> */}
         </div>
         <p className="projeto--descricao">{projeto.texto}</p>
       </div>

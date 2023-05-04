@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "tipo": "Estudo",
+        "origem": ["alura", "rocketseat"]
+    },
+    {
+        "id": 2,
+        "tipo": "Challenge",
+        "origem": ["alura", "frontendmentor"]
+    },
+    {
+        "id": 3,
+        "tipo": "Teste Técnico"
+    },
+    {
+        "id": 4,
+        "tipo": "Voluntário"
+    }
+]

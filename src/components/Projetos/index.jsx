@@ -1,16 +1,20 @@
 import './Projetos.css';
 import { Link } from 'react-router-dom';
 import ProjectCard from '../ProjectCard'
+import ListaSuspensa from '../ListaSuspensa'
 
 export default function Projetos({projetos}) {
 
   // console.log(projetos);
+  // console.log(tiposProjetos);
 
   return (
     <section className="projetos">
       <div className="projetos__section--title">
         <h2 className="projetos__section__title" id="projetos">Projects</h2>
       </div>
+
+      {/* <ListaSuspensa /> */}
 
       <div className="projetos__content">
 
